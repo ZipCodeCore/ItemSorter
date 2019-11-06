@@ -14,34 +14,12 @@ import java.util.function.ToLongFunction;
 public class IdComparator implements Comparator<Item> {
 
     public int compare(Item o1, Item o2) {
-        return 0;
-    }
-
-    public Comparator<Item> reversed() {
-        return null;
-    }
-
-    public Comparator<Item> thenComparing(Comparator<? super Item> other) {
-        return null;
-    }
-
-    public <U> Comparator<Item> thenComparing(Function<? super Item, ? extends U> keyExtractor, Comparator<? super U> keyComparator) {
-        return null;
-    }
-
-    public <U extends Comparable<? super U>> Comparator<Item> thenComparing(Function<? super Item, ? extends U> keyExtractor) {
-        return null;
-    }
-
-    public Comparator<Item> thenComparingInt(ToIntFunction<? super Item> keyExtractor) {
-        return null;
-    }
-
-    public Comparator<Item> thenComparingLong(ToLongFunction<? super Item> keyExtractor) {
-        return null;
-    }
-
-    public Comparator<Item> thenComparingDouble(ToDoubleFunction<? super Item> keyExtractor) {
-        return null;
+        if (o1.getId() > o2.getId()) {
+            return 1;
+        } else if (o1.getId() < o2.getId()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
