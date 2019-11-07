@@ -14,14 +14,8 @@ import java.util.function.ToLongFunction;
 public class NameComparator implements Comparator<Item> {
 
 
-    @Override
     public int compare(Item o1, Item o2) {
-        if (o1.getName() == o2.getName()) {
-            return 0;
-        }
-        if(!(o2.getName() == o1.getName())){
-            return 1;
-        }
-        return -1;
+
+        return o1.getName().compareTo(o2.getName());
     }
 }
