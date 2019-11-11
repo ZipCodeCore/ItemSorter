@@ -1,9 +1,11 @@
 package rocks.zipcode.io;
 
+import java.util.Comparator;
+
 /**
  * @author leon on 30/01/2019.
  */
-public class Item {
+public class Item implements Comparator <Item> {
     private String userName;
     private Long id;
     private Double itemPrice;
@@ -45,5 +47,10 @@ public class Item {
 
     public void setPrice(Double price) {
         this.itemPrice = price;
+    }
+
+
+    public int compare(Item o1, Item o2) {
+        return 0;
     }
 }
